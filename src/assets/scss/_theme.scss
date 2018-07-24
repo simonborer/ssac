@@ -1,0 +1,48 @@
+
+body {
+  font-family: sans-serif;
+  font-weight: 100;
+  margin: 0;
+  color: $text;
+  font-size: 20px;
+  background: $bg;
+}
+
+.tagline {
+  font-size: 5rem;
+  font-weight: 700;
+  padding: 2rem 4rem;
+  @include breakpoint{
+    max-width: 50%;
+  }
+}
+.section {
+  @include section;
+  @include breakpoint{
+    border-radius: 4px;
+  }
+  &--pink{
+    @include colour-combo(pink);
+  }
+  &--gold {
+    @include colour-combo(gold);
+  }
+}
+
+nav {
+  @include colour-combo(green);
+  @include breakpoint{
+    border-radius: 4px;
+  }
+  padding: 2rem;
+  margin: 1rem;
+  border-right-style: solid;
+  border-left-style: solid;
+}
+nav a {
+  margin: 0 1rem;
+}
+p {
+  max-width: 35rem;
+  margin: 0 auto;
+}

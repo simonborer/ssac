@@ -1,0 +1,26 @@
+@function map-deep-get($map, $keys...) {
+    @each $key in $keys {
+        $map: map-get($map, $key);
+    }
+    @return $map;
+}
+
+@mixin breakpoint() {
+    @media(min-width: 767px) {
+        @content
+    }
+}
+
+@mixin colour-combo($colour) {
+    background: map-deep-get($colour-map, $colour, "fore");
+    border-color: map-deep-get($colour-map, $colour, "back");
+}
+
+@mixin section() {
+    line-height: 1.6;
+    margin: 2rem 1rem;
+    padding: 2rem 3rem;
+    border: solid;
+    border-top: 0 solid transparent;
+    border-bottom: 0 solid transparent;
+}
