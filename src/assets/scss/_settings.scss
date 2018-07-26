@@ -1,4 +1,3 @@
-
 $colour-map: (
   background: rgba(252, 237, 206, .25),
   text: #3c4151,
@@ -7,6 +6,6 @@ $colour-map: (
   gold: (fore: #ffe1a9, back: #fed257)
 );
 
-
 $bg: map-get($colour-map, background);
+
 $text: map-get($colour-map, text);

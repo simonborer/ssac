@@ -5,9 +5,16 @@
     @return $map;
 }
 
-@mixin breakpoint() {
-    @media(min-width: 767px) {
-        @content
+@mixin breakpoint($size: 'medium') {
+    @if $size=='small' {
+        @media(min-width: 767px) {
+            @content
+        }
+    }
+    @else {
+        @media(min-width: 1079px) {
+            @content
+        }
     }
 }
 
@@ -18,9 +25,20 @@
 
 @mixin section() {
     line-height: 1.6;
-    margin: 2rem 1rem;
-    padding: 2rem 3rem;
-    border: solid;
     border-top: 0 solid transparent;
-    border-bottom: 0 solid transparent;
+    @include breakpoint {
+        border-radius: .2rem;
+    }
+}
+
+@mixin active() {
+    &:hover {
+        @content;
+    }
+    &:focus {
+        @content;
+    }
+    &:active {
+        @content;
+    }
 }
