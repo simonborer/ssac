@@ -11,7 +11,9 @@ gulp.task('prod', function () {
         uncss({
             html: ['public/**/*.html']
         }),
-        cssnano()
+        cssnano({
+            discardComments: {removeAll: true}
+        })
     ];
     return gulp.src('./src/assets/css/*.css')
         .pipe(postcss(plugins))

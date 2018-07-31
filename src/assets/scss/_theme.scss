@@ -18,41 +18,82 @@ a {
     }
 }
 
+.anchor-button {
+    border: 0 solid transparent;
+    transition: initial;
+    padding: 1rem;
+    background: $text;
+    color: rgb(252, 237, 206);
+    will-change: box-shadow;
+    transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+    @include active {
+        padding-bottom: 1rem;
+        box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12), 0 2px 4px -1px rgba(0, 0, 0, .2);
+    }
+    &:hover {
+        background-color: darken(#3c4151, .2);
+    }
+}
+
+.hero {
+    @include breakpoint(large){
+        margin: 8rem 0 3rem;
+    }
+}
 .tagline {
     font-weight: 700;
-    padding: 2rem 2rem 0;
-    @include breakpoint {
-        min-width: 36rem;
-        padding: 2rem 4rem;
+    padding: 2em;
+    @include breakpoint(large) {
+        // min-width: 36rem;
+        padding: 0 4rem;
+    }
+    &__head {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 0;
+        margin-bottom: 0;
     }
     &__heading {
         font-size: 1.25em;
-        @include breakpoint {
-            font-size: 2.5em;
+        line-height: 1.1;
+        @include breakpoint(large) {
+            font-size: 4.125vw;
+            line-height: 1;
         }
     }
     &__emp {
-            display: block;
-            font-size: 1.285em;
-            margin-bottom: -.15em;
+        display: block;
+        font-size: 1.29em;
+        margin-bottom: -.1em;
+        @include breakpoint(large){
+            font-size: 5.35vw;
+        }
     }
     &__lower {
         display: block;
-        font-size: .65em;
+                font-size: .75em;
         margin-top: .5em;
-        padding-left: .1em;
-        @include breakpoint {
-            font-size: .905em;
-            margin-top: .25em;
-            padding-left: .25em;
+        text-align: center;
+        max-width: 7em;
+        line-height: 1;
+        border-top: 2px solid;
+        padding-top: .35em;
+        @include breakpoint(large) {
+        font-size: 1.25vw;
+            max-width: max-content;
+            margin-top: .5em;
+            padding: .5em 1em;
         }
     }
 }
 
 .summary {
-    line-height: 1.6;
-    padding: 0 2rem;
-    @include breakpoint {
+    line-height: 1.4;
+    padding: 1rem 2rem;
+    @include breakpoint(large) {
+        line-height: 1.6;
         padding: 0 1rem;
         min-width: 36rem;
         max-width: 40vw;
@@ -61,21 +102,28 @@ a {
 
 .section {
     @include section;
-    @include breakpoint {
-        border-radius: 4px;
+    @include breakpoint(large) {
+        border-radius: .2rem;
         padding: 1rem 3rem 2rem;
-    border-bottom: 0 solid transparent;
-    border-top: 0 solid transparent;
-    border-right-style: solid;
-    border-left-style: solid;
+        border-bottom: 0 solid transparent;
+        border-top: 0 solid transparent;
+        border-right-style: solid;
+        border-left-style: solid;
+        border-right-width: medium;
+        border-left-width: medium;
+        line-height: 1.6;
+        margin: 2rem 1rem;
     }
-        border-right: 0 solid transparent;
+    line-height: 1.4;
+    border-right: 0 solid transparent;
     border-left: 0 solid transparent;
     border-top-style: solid;
     border-bottom-style: solid;
-    padding: 1rem 1rem 2rem;
-    margin: 2rem 1rem;
+    border-top-width: medium;
+    border-bottom-width: medium;
+    padding: 1rem 2rem 2rem;
     border-color: transparent;
+    margin: 1rem;
     &--pink {
         @include colour-combo(pink);
     }
@@ -90,17 +138,20 @@ a {
 .nav {
     @include section;
     @include colour-combo(green);
-    padding: 2rem;
-    @include breakpoint {
+    @include breakpoint(large) {
         padding: 2rem 2rem 2rem 4.5rem;
+        line-height: inherit;
     }
+    padding: 2rem;
     margin: 0 0 1rem;
     border-bottom-style: solid;
+    border-bottom-width: medium;
     border-right: 0 solid transparent;
     border-left: 0 solid transparent;
+    line-height: 1.8;
     &__link {
         margin: 0 1rem 0 0;
-        @include breakpoint {
+        @include breakpoint(large) {
             margin: 0 1rem;
         }
         white-space: pre;
@@ -115,20 +166,27 @@ a {
 .row {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 4rem;
+    justify-content: center;
+    margin: 0 auto 4rem;
+    max-width: 72rem;
+    @include breakpoint(large) {
+        margin: 6rem auto 4rem;
+    }
 }
 
 .column {
-    @include breakpoint {
+    margin: 0 auto;
+    @include breakpoint(large) {
         flex-basis: 50%;
     }
 }
 
-.flow {
-    @include breakpoint {
 
-        width: 50vw;
+.cta {
+    &__heading {
+        margin: 1rem 1rem .5rem;
     }
-    max-width: 70ch;
-    margin: 0 auto;
+    &__cta {
+        margin: 2rem 0 1rem;
+    }
 }

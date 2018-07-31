@@ -13,7 +13,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "foundation-sites": "^6.5.0-rc.2"
+  },
   "devDependencies": {
     "@csstools/normalize.css": "^8.0.0",
     "autoprefixer": "^8.4.1",

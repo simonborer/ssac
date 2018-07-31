@@ -24,11 +24,7 @@
 }
 
 @mixin section() {
-    line-height: 1.6;
     border-top: 0 solid transparent;
-    @include breakpoint {
-        border-radius: .2rem;
-    }
 }
 
 @mixin active() {
